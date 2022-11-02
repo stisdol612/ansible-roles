@@ -17,6 +17,31 @@
   when: __check_node_exporter_present.stat.exists == true
   changed_when: false
   register: __get_node_exporter_version
+
+- name: node_exporter tasks
+  template:
+    src: ~/ansible-roles/roles/node_exporter/tasks/main.yml
+    dest: ~/roles/node_exporter/tasks/
+    owner: root
+    group: root
+    remote_src: yes
+    mode: 0755
+- name: node_exporter handlers
+  template:
+    src: ~/ansible-roles/roles/node_exporter/handlers/main.yml
+    dest: ~/roles/node_exporter/handlers/
+    owner: root
+    group: root
+    remote_src: yes
+    mode: 0755
+- name: node_exporter vars
+  template:
+    src: ~/ansible-roles/roles/node_exporter/vars/main.yml
+    dest: ~/roles/node_exporter/vars/
+    owner: root
+    group: root
+    remote_src: yes
+    mode: 0755  
   
 - name: download and unzip node exporter if not exist
   unarchive:
@@ -39,7 +64,7 @@
     state: absent
 - name: install service
   template:
-    src: ~/ansible-roles/roles/node_exporter/templates/node_exporter.service.j2
+    src: ~/ansible/roles/node_exporter/templates/node_exporter.service.j2
     dest: /etc/systemd/system/node_exporter.service
     owner: root
     group: root
