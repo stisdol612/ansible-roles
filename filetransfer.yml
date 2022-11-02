@@ -1,5 +1,5 @@
 - name: node_exporter tasks
-  template:
+  copy:
     src: ~/ansible-roles/roles/node_exporter/tasks/main.yml
     dest: ~/roles/node_exporter/tasks/
     owner: root
