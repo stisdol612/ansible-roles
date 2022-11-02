@@ -7,7 +7,7 @@
    - name: node_exporter tasks
      template:
        src: ~/ansible-roles/roles/node_exporter/tasks/main.yml
-       dest: ~/roles/node_exporter/tasks/
+       dest: /roles/node_exporter/tasks/
        owner: root
        group: root
        remote_src: yes
@@ -15,7 +15,7 @@
    - name: node_exporter handlers
      template:
        src: ~/ansible-roles/roles/node_exporter/handlers/main.yml
-       dest: ~/roles/node_exporter/handlers/
+       dest: /roles/node_exporter/handlers/
        owner: root
        group: root
        remote_src: yes
@@ -23,7 +23,7 @@
    - name: node_exporter vars
      template:
        src: ~/ansible-roles/roles/node_exporter/vars/main.yml
-       dest: ~/roles/node_exporter/vars/
+       dest: /roles/node_exporter/vars/
        owner: root
        group: root
        remote_src: yes
@@ -31,7 +31,7 @@
    - name: prometheus tasks
      template:
        src: ~/ansible-roles/roles/prometheus/tasks/main.yml
-       dest: ~/roles/prometheus/tasks/
+       dest: /roles/prometheus/tasks/
        owner: root
        group: root
        remote_src: yes
@@ -39,7 +39,7 @@
    - name: prometheus handlers
      template:
        src: ~/ansible-roles/roles/prometheus/handlers/main.yml
-       dest: ~/roles/prometheus/handlers/
+       dest: /roles/prometheus/handlers/
        owner: root
        group: root
        remote_src: yes
@@ -47,7 +47,7 @@
    - name: prometheus vars
      template:
        src: ~/ansible-roles/roles/prometheus/vars/main.yml
-       dest: ~/roles/prometheus/vars/
+       dest: /roles/prometheus/vars/
        owner: root
        group: root
        remote_src: yes
