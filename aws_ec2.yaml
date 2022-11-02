@@ -1,0 +1,6 @@
+---
+plugin: aws_ec2
+ec2 instance role: EC2Role
+regions: us-east-1
+filters:
+  tag:Name: Linux
