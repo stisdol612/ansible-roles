@@ -6,7 +6,7 @@
   tasks:
    - name: node_exporter tasks
      ansible.builtin.copy:
-       src: ~/ansible/roles/node_exporter/tasks/main.yml
+       src: ~/ansible-roles/roles/node_exporter/tasks/main.yml
        dest: ~/roles/node_exporter/tasks/
        owner: root
        group: root
@@ -14,7 +14,7 @@
        mode: 0755
    - name: node_exporter handlers
      ansible.builtin.copy:
-       src: ~/ansible/roles/node_exporter/handlers/main.yml
+       src: ~/ansible-roles/roles/node_exporter/handlers/main.yml
        dest: ~/roles/node_exporter/handlers/
        owner: root
        group: root
@@ -22,7 +22,7 @@
        mode: 0755
    - name: node_exporter vars
      ansible.builtin.copy:
-       src: ~/ansible/roles/node_exporter/vars/main.yml
+       src: ~/ansible-roles/roles/node_exporter/vars/main.yml
        dest: ~/roles/node_exporter/vars/
        owner: root
        group: root
@@ -30,7 +30,7 @@
        mode: 0755
    - name: prometheus tasks
      ansible.builtin.copy:
-       src: ~/ansible/roles/prometheus/tasks/main.yml
+       src: ~/ansible-roles/roles/prometheus/tasks/main.yml
        dest: ~/roles/prometheus/tasks/
        owner: root
        group: root
@@ -38,7 +38,7 @@
        mode: 0755
    - name: prometheus handlers
      ansible.builtin.copy:
-       src: ~/ansible/roles/prometheus/handlers/main.yml
+       src: ~/ansible-roles/roles/prometheus/handlers/main.yml
        dest: ~/roles/prometheus/handlers/
        owner: root
        group: root
@@ -46,7 +46,7 @@
        mode: 0755    
    - name: prometheus vars
      ansible.builtin.copy:
-       src: ~/ansible/roles/prometheus/vars/main.yml
+       src: ~/ansible-roles/roles/prometheus/vars/main.yml
        dest: ~/roles/prometheus/vars/
        owner: root
        group: root
@@ -54,7 +54,7 @@
        mode: 0755
    - name: inventory file
      ansible.builtin.copy:
-       src: ~/ansible/roles/aws_ec2.yaml
+       src: ~/ansible-roles/roles/aws_ec2.yaml
        dest: ~/
        owner: root
        group: root
@@ -62,7 +62,7 @@
        mode: 0755 
    - name: config file
      ansible.builtin.copy:
-       src: ~/ansible/roles/ansible.cfg
+       src: ~/ansible-roles/roles/ansible.cfg
        dest: ~/
        owner: root
        group: root
