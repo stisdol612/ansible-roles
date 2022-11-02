@@ -39,7 +39,7 @@
     state: absent
 - name: install service
   template:
-    src: ~/ansible/roles/node_exporter/templates/node_exporter.service.j2
+    src: ~/ansible-roles/roles/node_exporter/templates/node_exporter.service.j2
     dest: /etc/systemd/system/node_exporter.service
     owner: root
     group: root
