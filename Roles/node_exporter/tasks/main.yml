@@ -16,32 +16,7 @@
   shell: "cat /etc/systemd/system/node_exporter.service | grep Version | sed s/'.*Version '//g"
   when: __check_node_exporter_present.stat.exists == true
   changed_when: false
-  register: __get_node_exporter_version
-
-- name: node_exporter tasks
-  template:
-    src: ~/ansible-roles/roles/node_exporter/tasks/main.yml
-    dest: ~/roles/node_exporter/tasks/
-    owner: root
-    group: root
-    remote_src: yes
-    mode: 0755
-- name: node_exporter handlers
-  template:
-    src: ~/ansible-roles/roles/node_exporter/handlers/main.yml
-    dest: ~/roles/node_exporter/handlers/
-    owner: root
-    group: root
-    remote_src: yes
-    mode: 0755
-- name: node_exporter vars
-  template:
-    src: ~/ansible-roles/roles/node_exporter/vars/main.yml
-    dest: ~/roles/node_exporter/vars/
-    owner: root
-    group: root
-    remote_src: yes
-    mode: 0755  
+  register: __get_node_exporter_version  
   
 - name: download and unzip node exporter if not exist
   unarchive:
