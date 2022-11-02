@@ -4,20 +4,41 @@
   hosts: localhost
 
   tasks:
-   - name: inventory file
+   - name: node_exporter tasks
      template:
-       src: ~/ansible-roles/roles/aws_ec2.yaml
-       dest: ~/
-       owner: root
-       group: root
+       src: ~/ansible-roles/Roles/node_exporter/tasks/main.yml
+       dest: ~/roles/node_exporter/tasks/
        remote_src: yes
-       mode: 0755 
-   - name: config file
+       mode: 0755
+   - name: node_exporter handlers
      template:
-       src: ~/ansible-roles/roles/ansible.cfg
-       dest: ~/
-       owner: root
-       group: root
+       src: ~/ansible-roles/Roles/node_exporter/handlers/main.yml
+       dest: ~/roles/node_exporter/handlers/
+       remote_src: yes
+       mode: 0755
+   - name: node_exporter vars
+     template:
+       src: ~/ansible-roles/Roles/node_exporter/vars/main.yml
+       dest: ~/roles/node_exporter/vars/
+       remote_src: yes
+       mode: 0755  
+   - name: prometheus tasks
+     template:
+       src: ~/ansible-roles/Roles/prometheus/tasks/main.yml
+       dest: ~/roles/prometheus/tasks/
+       remote_src: yes
+       mode: 0755
+   - name: prometheus handlers
+     template:
+       src: ~/ansible-roles/Roles/prometheus/handlers/main.yml
+       dest: ~/roles/prometheus/handlers/
        remote_src: yes
        mode: 0755    
+   - name: prometheus vars
+     template:
+       src: ~/ansible-roles/Roles/prometheus/vars/main.yml
+       dest: ~/roles/prometheus/vars/
+       remote_src: yes
+       mode: 0755
+    
           
