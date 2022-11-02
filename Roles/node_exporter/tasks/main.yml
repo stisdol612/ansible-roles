@@ -37,8 +37,7 @@
     dest: /etc/systemd/system/node_exporter.service
     owner: root
     group: root
-    remote_src: yes
-    mode: 0755
+    mode: 0644
   notify: reload_daemon_and_restart_node_exporter
 - meta: flush_handlers
 - name: service always started
