@@ -1,4 +1,8 @@
 ---
+- name: Update all packages
+  yum:
+   name: yum
+   state: latest
 - name: create node exporter user
   user:
     name: "{{ node_exporter_user }}"
@@ -33,7 +37,7 @@
     state: absent
 - name: install service
   template:
-    src: ~/roles/node_exporter/templates/node_exporter.service.j2
+    src: node_exporter.service.j2
     dest: /etc/systemd/system/node_exporter.service
     owner: root
     group: root
